@@ -1,0 +1,485 @@
+/* ==========================================================================
+   
+   The format of this stylesheet is based on Nicolas Gallagher's Idiomatic CSS
+   https://github.com/necolas/idiomatic-css
+
+   Per selector use the following groupings:
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other 
+   ========================================================================== */
+
+
+/* ==========================================================================
+	Responsive Units for Typography
+	Tutorial: http://www.netmagazine.com/tutorials/build-responsive-site-week-typography-and-grids-part-2
+
+	I use ems to size typography
+	Sizes are proportional to the context in which a piece of text sits
+	If the body text size is 16px (context=16px) and we want our heading to appear as 32px (target=32px)
+	
+	target / context = result
+	32 / 16 = 2em
+   ========================================================================== */
+
+/* ==========================================================================
+	Responsive Units for Layout
+	Tutorial: http://www.netmagazine.com/tutorials/build-responsive-site-week-typography-and-grids-part-2
+
+	I use ems for vertical layout using the formula:
+		target / context = result
+
+	I use % for horizontal layout using the formula:
+		target / context = result
+   ========================================================================== */
+
+body {
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	margin: 0 auto;
+	background:white;
+	color:black;
+	font: 100%/1.5 Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+	
+
+}
+
+.document{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	/*16px (context is width 320px)*/
+	padding-left:5%; 
+	padding-right:5%;
+	padding-bottom:10%;
+	
+}
+
+header{
+
+	
+}
+
+h1 {
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	/* 24px (context is heading size)*/	
+	margin-top: 0.6em; 
+		
+	font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
+	font-weight: bold;
+	
+	/* 40px */  
+	font-size: 2.5em; 
+	
+	/* 32px (context is heading size)*/
+	line-height: 0.8; 
+}
+
+.logo{
+	color:black;
+}
+
+a{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/	
+
+	text-decoration:none;
+	color:#49D28D;
+	cursor:auto;
+}
+
+@-moz-document url-prefix(){
+	/*firefox specific hacks*/
+	a{
+		cursor:pointer;
+	}
+}
+
+.to_nav{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	display:block;
+	background: transparent; 
+	border-bottom: 18px double #121212; 
+	border-top: 6px solid #121212;
+	height: 7px; 
+	width:37px;
+}
+
+.to_nav_wrapper:hover,
+.to_nav_wrapper:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+.to_nav_wrapper{
+	position:absolute;
+	top:10px;
+	right:10px;
+    width:37px;
+    border:solid 1px black;
+    border-radius:5px;
+    padding:10px;
+	z-index:1001;
+
+}
+
+ul.portfolio, ul.featured-projects{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+
+	margin:0;
+	padding:0;
+	clear:both;
+
+	/*to clear floats*/
+	overflow:hidden; 
+	
+	list-style:none;
+}
+
+img{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	/*fills the width of its containing element up until its max size*/
+	max-width:100%;  
+}
+
+ul.portfolio li.portfolio-item{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+		
+	background-color:#fff;
+	float:left;
+	
+	/*12px (context is 288px)*/
+	margin:0 4.1666666% 4.1666666% 0; 
+	
+	/*138px (context is 288px)*/
+	width:47.9166666%; 
+	
+}
+
+li.project-item{
+	/*@todo convert this to ems*/
+	margin-top:20px;
+}
+
+ul.portfolio li.portfolio-item:nth-child(2n){
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	margin-right:0; 
+}
+
+figure{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	color:black;
+}
+
+.p-entry-link{
+	color: #2C7E55;
+}
+
+.portfolio-item-title{
+	/* 
+	 Positioning 
+	 Display & Box Model 
+	 Color 
+	 Text 
+	 Other
+	*/
+	
+	color:black;
+	font-size:1.1em;
+}
+/*
+	Footer navigation menu
+	http://www.netmagazine.com/tutorials/build-smart-mobile-navigation-without-hacks
+*/
+#primary_nav{
+	margin:0;
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	z-index:1000;
+	padding-top:54px;
+}
+
+.menu-links{
+	display:block;
+	border-bottom-width:0;
+	overflow:hidden;
+	height:0;
+	line-height:0;
+	padding:0 1em;
+}
+
+#primary_nav:target{
+	z-index:1001;
+}
+
+#primary_nav:target a{
+	position:relative;
+	z-index:1;
+	border-bottom-width:1px;
+	line-height:3em;
+	height:3em;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    height: 2em;
+    border-bottom: 1px solid #383838;
+}
+
+#primary_nav:target ul {
+    list-style: none;
+    background: #1c1c1c;
+    padding: 5px 0;
+	margin:1em 0 0 0;
+	z-index:1001;
+}
+
+
+.menu-link:hover, .menu-link:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+#back{
+	position:relative;
+}
+
+#primary_nav:target #back a{
+	background:transparent;
+	border:0;
+	text-indent:-999em;
+	position:absolute;
+	top:-101em;
+	bottom:-101em;
+	left:0;
+	right:0;
+	z-index:0;
+	height:auto;
+}
+
+
+/*
+	Footer navigation Menu
+	http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/a-simple-responsive-mobile-first-navigation/
+
+
+#primary_nav ul {
+    list-style: none;
+    background: #1c1c1c;
+    padding: 5px 0;
+	margin:1em 0 0 0;
+}
+#primary_nav li a {
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    height: 2em;
+    border-bottom: 1px solid #383838;
+}
+#primary_nav li:last-child a {
+    border-bottom: none;
+}
+#primary_nav li a:hover,
+#primary_nav li a:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+*/
+
+canvas{
+	display:none;
+}
+
+@media screen and (min-width:321px){
+	html,body{
+		height:100%;
+	}
+	
+	.mobileOnly{
+		display:none;
+	}
+	
+	.document{
+		padding-left:0%;
+		padding-right:0%;
+		padding-bottom:0%;
+	}
+	
+	.portfolio_wrapper{
+		width:90%;
+		padding-left:5%;
+		padding-right:5%;
+	}
+	
+	.about_wrapper{
+		width:90%;
+		padding-left:5%;
+		padding-right:5%;
+	}
+	
+	.entry-wrapper{
+		width:90%;
+		padding-left:5%;
+		pading-right:5%;
+	}
+	
+	header{
+		position:relative;
+		border-bottom:1px solid black;
+		height:90px;
+		overflow:auto;
+	}
+	
+	h1{
+		position:absolute;
+		top:0;
+		left:0;
+		margin-left:50px;
+	}
+	
+	#primary_nav{
+		position:absolute;
+		top:0;
+		right:0;
+		left:auto;
+		width:40%;
+		height:100%;
+		z-index:auto;
+		padding:0;
+	}
+	
+	.menu-list{
+	  overflow:auto;
+	  height:100%;
+	  margin:0;
+	  padding:0;
+	}
+	
+	.menu-item{
+	  position:relative;
+	  float:left;
+	  width:100px;
+	  overflow:auto;
+	  height:100%;
+	}
+	
+	.menu-item:hover{
+		background-color:#ccc;
+
+	}
+
+	.menu-item:hover .menu-link{
+		color:#1c1c1c;
+	}
+
+	
+	.menu-link{
+	  vertical-align:middle;
+	  position:absolute;
+	  left:10%;
+	  right:10%;
+	  top:40%;
+	  overflow:visible;
+	  height:auto;
+	  text-align:center;
+	}
+	
+
+	
+
+	
+	#primary_nav li:last-child{
+		display:none;
+	}
+	
+	canvas{
+		display:block;
+		position:relative;
+		
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+	
+	canvas:focus{
+		/*to remove unslightly blue border when a user clicks the canvas*/
+		outline:none;
+	}
+}
