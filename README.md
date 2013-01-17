@@ -2,12 +2,6 @@ flocking
 ====================
 Flocking experiment written in Javascript
 
-Author: 
+See my portfolio for more detail:
 
-Anthony Lazzaro (tonyzaro.com)
-
-Summary:
-
-A javascript implementation of Daniel Shiffmans Reynold's boid/flockign algorithm
-The processing js library has been used to simplify canvas manipulations
-http://processing.org/learning/topics/flocking.html
+http://tonyzaro.com/portfolio/flocking
